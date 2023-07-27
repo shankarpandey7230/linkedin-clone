@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 import React from "react";
 import { Outlet } from "react-router-dom";
+import RightSide from "./RightSide";
+import LeftSide from "./LeftSide";
+import Main from "./Main";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <Container>
       <Section>
@@ -16,6 +19,11 @@ const Home = () => {
         </p>
       </Section>
       <Outlet />
+      <Layout>
+        <LeftSide />
+        <Main />
+        <RightSide />
+      </Layout>
     </Container>
   );
 };
@@ -46,6 +54,20 @@ const Section = styled.section`
   }
 
   @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 5px;
+  }
+`;
+const Layout = styled.div`
+  display: grid;
+  grid-template-areas: "leftside main rightside";
+  grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
+  column-gap: 25px;
+  row-gap: 25px;
+  /* grid-template-rows: auto; */
+  margin: 25px 0;
+  @media (max-width: 768px) {
+    display: flex;
     flex-direction: column;
     padding: 0 5px;
   }
