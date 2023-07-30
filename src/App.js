@@ -17,7 +17,7 @@ function App(props) {
         <Routes>
           <Route exact path="/" element={<Login />}></Route>
           <Route path="/home" element={<Home />}>
-            <Route path="" element={<Header />}></Route>
+            <Route path="/home" element={<Header />}></Route>
           </Route>
         </Routes>
       </Router>
