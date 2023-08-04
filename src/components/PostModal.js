@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/";
 import { connect } from "react-redux";
 import firebase from "firebase/compat/app";
 import { postArticleAPI } from "../actions";
@@ -79,7 +79,6 @@ const PostModal = (props) => {
                   value={editorText}
                   onChange={(e) => setEditorText(e.target.value)}
                   placeholder="Share Something"
-                  autoFocus="true"
                 />
                 {assetArea === "image" ? (
                   <UploadImage>
